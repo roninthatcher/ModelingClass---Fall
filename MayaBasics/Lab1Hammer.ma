@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Lab1Hammer.ma
-//Last modified: Tue, Aug 29, 2023 06:04:05 PM
+//Last modified: Tue, Aug 29, 2023 08:40:13 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.1.1";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "91C1D809-4D81-2528-E4C6-CC8DAB8471E7";
+fileInfo "UUID" "1F223B8A-46C7-706C-1DF3-E8A0AB6F2BB3";
 createNode transform -s -n "persp";
 	rename -uid "D6F512AC-4288-D61E-E89F-90AE79A61F14";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -14.24743597139817 13.7478867489079 -19.994572055804742 ;
-	setAttr ".r" -type "double3" -19.200000000000028 215.59999999999968 0 ;
+	setAttr ".t" -type "double3" -9.5834925518531193 12.974904081218535 22.704263298135889 ;
+	setAttr ".r" -type "double3" -17.399999999971023 1417.2000000000578 -4.3126719459141316e-16 ;
 	setAttr ".rpt" -type "double3" 4.6097602765114572e-16 -2.8298596044208608e-15 -2.4033805059812088e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "5C07A9E0-41B6-6923-9C1D-F893FF0E07C9";
@@ -80,7 +80,7 @@ createNode camera -s -n "sideShape" -p "side";
 createNode transform -n "Handle";
 	rename -uid "3726267B-4560-1AFC-9EF2-268BA0ECD8C2";
 	setAttr ".t" -type "double3" 0 2.800059212044248 0 ;
-	setAttr ".r" -type "double3" 360.07876751615026 0 0 ;
+	setAttr ".r" -type "double3" 358.56792290601987 0 0 ;
 	setAttr ".s" -type "double3" 0.97229730148575033 5.4176278144053907 0.97229730148575033 ;
 createNode mesh -n "HandleShape" -p "Handle";
 	rename -uid "0426A3AB-4704-11BA-D105-3884D4FBABBE";
@@ -1379,20 +1379,20 @@ createNode mesh -n "EndShape2" -p "End2";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "C3AF8238-499D-C62C-4373-ECB74A4BB079";
+	rename -uid "8A8CEF44-4671-803C-3090-21A8BA03DCBB";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "1AE27689-48EE-7E0F-E74A-62B109824412";
+	rename -uid "6A15BEDD-4177-D723-6B0E-92AB16604D0D";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "995FEF73-47E1-8CCD-72BF-D48CFE4826EB";
+	rename -uid "3C37391D-47F9-75E9-116B-29B00908A91B";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "1FC13A93-4B94-2FA2-6155-15B2B108D480";
+	rename -uid "EDA41116-46BE-512B-4792-E0AFD23BE577";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "D8FC4FB7-4FBE-6D02-43C2-4AB433C2132C";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "0DA3CD51-4DBF-36B9-CC65-BEB3083E7027";
+	rename -uid "69734DED-49A5-422B-259C-30AF12589AA3";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "B0E90E3F-45AD-0272-367A-33AF2CE07165";
 	setAttr ".g" yes;
@@ -1508,8 +1508,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "polyCube1.out" "HandleShape.i";
 connectAttr "polyCube2.out" "Connecting_PieceShape.i";
 connectAttr "polySphere1.out" "EndShape1.i";
