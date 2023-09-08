@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Challenge1BLamp.ma
-//Last modified: Thu, Sep 07, 2023 09:24:33 AM
+//Last modified: Fri, Sep 08, 2023 09:48:24 AM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.1.1";
@@ -10,20 +10,23 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "81E78C17-49B6-4AC7-BD91-CAAD4B44C3DE";
+fileInfo "UUID" "31EF0038-418B-2D13-21CE-9CA0C9C53041";
 createNode transform -s -n "persp";
 	rename -uid "7DB4C151-4EE6-08E8-0A72-85BBCCCA723F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -14.342895691562946 1.715900218049458 5.7367489888264451 ;
-	setAttr ".r" -type "double3" -6.3383527300853979 651.79999999998245 -1.0705540359847992e-15 ;
+	setAttr ".t" -type "double3" 9.3059866064331569 10.151852749766906 -6.406151538990116 ;
+	setAttr ".r" -type "double3" 146.03789511271393 55.456850232089252 -180 ;
+	setAttr ".rp" -type "double3" 1.1102230907996055e-16 -4.4408920985006262e-16 0 ;
+	setAttr ".rpt" -type "double3" 1.5125442315553465e-16 7.0638709431728169e-17 1.2625791603493234e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "F20C1CC3-464F-94D5-9C9E-F8A79D628A69";
 	setAttr -k off ".v" no;
-	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 15.542627169763463;
+	setAttr ".fl" 34.999999999999979;
+	setAttr ".coi" 13.621528837337737;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
+	setAttr ".tp" -type "double3" 5.9604527535839225e-08 2.5422611236570898 1.5809575870662229e-13 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "FBCC36A2-4E66-9C45-76A0-6B8A31A0A3FE";
@@ -735,20 +738,20 @@ createNode mesh -n "LampMesh" -p "Lamp";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "6A520669-4562-DD95-F7B4-A8AEABECCFB5";
+	rename -uid "17015ABB-4286-F787-D6E5-EA95E76D452B";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "6E9447F8-4FDB-05B8-7D26-20B69AFCB47A";
+	rename -uid "B98ABA2A-4D21-84A0-D9C0-DAAC165010A6";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D7AFF7C0-460B-ADEE-CB2A-1F9DC3BA94F0";
+	rename -uid "28CC0462-4BEB-F601-B0D3-5D84CCD0287F";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "1629D14B-4050-870C-E0A2-A29B3A1C9017";
+	rename -uid "39FECEAD-4B18-AD24-E2D1-E6A6F597B6BF";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "903D8C8A-4DF9-2AC8-73E9-CC8FFA9DB6BB";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "6C4BA405-48AE-D6EE-0B28-F4BFA99C03B8";
+	rename -uid "145617CE-4308-10A2-72B2-A0B3529B5975";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "72E77B67-4FF1-9C70-8449-A0877B31C220";
 	setAttr ".g" yes;
